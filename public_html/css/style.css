@@ -1,3 +1,11 @@
-div{
-    display: flex;
+input {
+    margin-bottom:1em;
+}
+.btn-primary {
+    margin-bottom: 1em;
+}
+#contenedor{
+    display:flex;
+    flex-direction: column;
+    
 }
