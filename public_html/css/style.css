@@ -9,3 +9,6 @@ input {
     flex-direction: column;
     
 }
+.col-xs-3 {
+margin: 1em;
+}

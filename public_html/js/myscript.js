@@ -12,6 +12,8 @@ function paginaCargada() {
             var form = document.createElement('div');
             var btnEditarFormulario = document.createElement('button');
             var btnBorrarFormulario = document.createElement('button');
+            btnEditarFormulario.setAttribute('class', 'btn btn-primary');
+            btnBorrarFormulario.setAttribute('class', 'btn btn-primary');
             var tituloFormulario = document.createElement('h5');
             var contenidoEditar = document.createTextNode('Editar Formulario');
             var contenidoBorrar = document.createTextNode('Borrar Formulario');
