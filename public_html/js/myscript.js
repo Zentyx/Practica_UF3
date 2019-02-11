@@ -39,14 +39,12 @@ function paginaCargada() {
         }
 
         function diseñaFormulario() {
-            var idForm = this.id.split('-', 2);
-            alert(idForm[0]);
+            window.open("diseñaFormulario.html", "Diseño Web", "width=300, height=200");
         }
 
         function borraFormulario() {
             var idForm = this.id.split('-', 2);
             document.getElementById('contenedor').removeChild(document.getElementById(idForm[0]+'-container'));
-            
         }
 
     }
