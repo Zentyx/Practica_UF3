@@ -1,5 +1,6 @@
 function paginaCargada() {
 
+    var errorSpan = document.getElementById("formError");
     var nombreFormulario = document.getElementById("inGeneradorFormulario");
     var btnGeneraFormulario = document.getElementById("btnGeneradorFormulario");
     var divContenedor = document.getElementById("contenedor");
@@ -7,15 +8,15 @@ function paginaCargada() {
 
     btnGeneraFormulario.addEventListener('click', generarFormulario);
     nombreFormulario.addEventListener('input', cambiarBorde);
-    
-    function cambiarBorde() {
-            if (regexp.test(nombreFormulario.value)) {
-                nombreFormulario.style.borderColor = 'green';
-            } else {
-                nombreFormulario.style.borderColor = 'red';
 
-            }
+    function cambiarBorde() {
+        if (regexp.test(nombreFormulario.value)) {
+            nombreFormulario.style.borderColor = 'green';
+            errorSpan.innerHTML = "";
+        } else {
+            nombreFormulario.style.borderColor = 'red';
         }
+    }
 
     function generarFormulario() {
         if (regexp.test(nombreFormulario.value)) {
@@ -48,7 +49,8 @@ function paginaCargada() {
             btnEditarFormulario.addEventListener('click', diseñaFormulario);
             btnBorrarFormulario.addEventListener('click', borraFormulario);
         } else {
-            alert('El nombre del formulario debe empezar por 3 o más letras seguidas de uno o más números');
+            errorSpan.innerHTML = "El nombre del formulario debe empezar por 3 o más letras seguidas de uno o más números"; // plain javascript            
+            ////alert('El nombre del formulario debe empezar por 3 o más letras seguidas de uno o más números');
         }
 
 
@@ -62,7 +64,7 @@ function paginaCargada() {
             document.getElementById('contenedor').removeChild(document.getElementById(idForm[0] + '-container'));
         }
 
-        
+
 
     }
 
