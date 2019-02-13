@@ -3,13 +3,24 @@ function paginaCargada() {
     var nombreFormulario = document.getElementById("inGeneradorFormulario");
     var btnGeneraFormulario = document.getElementById("btnGeneradorFormulario");
     var divContenedor = document.getElementById("contenedor");
+    var regexp = /[A-Za-z_çàéèíïóòúüÇÀÉÈÍÏÓÒÚÜ]{3,}\d+/;
 
     btnGeneraFormulario.addEventListener('click', generarFormulario);
+    nombreFormulario.addEventListener('input', cambiarBorde);
+    
+    function cambiarBorde() {
+            if (regexp.test(nombreFormulario.value)) {
+                nombreFormulario.style.borderColor = 'green';
+            } else {
+                nombreFormulario.style.borderColor = 'red';
+
+            }
+        }
 
     function generarFormulario() {
-        if (nombreFormulario.value != '') {
+        if (regexp.test(nombreFormulario.value)) {
             var div = document.createElement('div');
-            var form = document.createElement('div');
+            var form = document.createElement('form');
             var btnEditarFormulario = document.createElement('button');
             var btnBorrarFormulario = document.createElement('button');
             btnEditarFormulario.setAttribute('class', 'btn btn-primary');
@@ -37,17 +48,21 @@ function paginaCargada() {
             btnEditarFormulario.addEventListener('click', diseñaFormulario);
             btnBorrarFormulario.addEventListener('click', borraFormulario);
         } else {
-            alert("debes darle un nombre al formulario");
+            alert('El nombre del formulario debe empezar por 3 o más letras seguidas de uno o más números');
         }
 
+
+
         function diseñaFormulario() {
-            window.open("diseñaFormulario.html", "Diseño Web", "width=300, height=200");
+
         }
 
         function borraFormulario() {
             var idForm = this.id.split('-', 2);
-            document.getElementById('contenedor').removeChild(document.getElementById(idForm[0]+'-container'));
+            document.getElementById('contenedor').removeChild(document.getElementById(idForm[0] + '-container'));
         }
+
+        
 
     }
 
