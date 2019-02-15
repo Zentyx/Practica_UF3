@@ -1,5 +1,5 @@
 function paginaCargada() {
-    
+
 
     var errorSpan = document.getElementById("formError");
     var nombreFormulario = document.getElementById("inGeneradorFormulario");
@@ -65,15 +65,15 @@ function paginaCargada() {
             document.getElementById('contenedor').removeChild(document.getElementById(idForm[0] + '-container'));
         }
 
-    function creaCampos(){
-        var idBoton = this.id.split('-',2);
-        
-        alert(document.getElementById(cantidad[0]+'-'+'cantidad').value);
-       
+        function creaCampos() {
+            var idBoton = this.id.split('-', 2);
+
+            alert(document.getElementById(cantidad[0] + '-' + 'cantidad').value);
+
+        }
+
     }
 
+
 }
-
-
-
 
