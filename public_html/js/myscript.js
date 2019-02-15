@@ -63,7 +63,7 @@ function paginaCargada() {
         var idBoton = this.id.split('-',2);
         
         alert(document.getElementById(cantidad[0]+'-'+'cantidad').value);
-        //sdlnskdkvn
+       
     }
 
 }
